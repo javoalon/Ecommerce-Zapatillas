@@ -1,0 +1,148 @@
+.carrito-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 300px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  overflow-wrap: normal;
+}
+
+.carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.carrito h2 {
+  text-align: center;
+}
+
+.producto {
+  position: relative;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border-color: #000000;
+  margin: 5px;
+  overflow: scroll;
+}
+
+.producto h3 {
+  margin: 0;
+}
+
+.producto p {
+  margin-bottom: 5px;
+}
+.totalycomprar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: fixed;
+  bottom: 15px;
+}
+.lista-productos-carrito {
+  overflow: scroll;
+  min-height: 550px;
+  max-height: 550px;
+}
+.carrito-container .totalycomprar button{
+  position: fixed;
+  right: 0;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  max-height: fit-content;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.toggle-button:hover,
+.totalycomprar button:hover{
+  background-color: #45a049;
+}
+
+.toggle-button:active,
+.totalycomprar button:active{
+  background-color: #3e8e41;
+}
+.carrito-container {
+  width: 250px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.carrito-visible {
+  transform: translateX(0);
+}
+
+.toggle-button {
+  position: absolute;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  top: 75px;
+  left: -35px;
+  /* Ajusta la posición a tu preferencia */
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 1;
+}
+
+.toggle-button:hover {
+  background-color: #45a049;
+}
+
+.toggle-button:active {
+  background-color: #3e8e41;
+}
+.contenido {
+  display: flex;
+  align-items: center;
+}
+
+.imagen {
+  width: 90px;
+  margin-right: 10px;
+}
+
+.info {
+  font-size: 14px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info p {
+  margin-bottom: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.btnEliminar {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ff0000;
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btnEliminar:active {
+  background-color: #757575;
+}

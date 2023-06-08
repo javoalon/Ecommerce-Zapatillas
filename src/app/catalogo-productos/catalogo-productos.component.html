@@ -1,0 +1,32 @@
+<app-carrito></app-carrito>
+<hr>
+<h2>Catálogo de Productos</h2>
+<div class="catalogo-container">
+    <div class="filtros">
+        <h2>Filtros</h2>
+        <div class="filtro-precio">
+            <label for="filtroPrecio">Ordenar por precio:</label>
+            <select id="filtroPrecio" [(ngModel)]="filtroPrecio">
+                <option value="asc">Menor a mayor</option>
+                <option value="desc">Mayor a menor</option>
+            </select>
+        </div>
+        <div class="filtro-marca">
+            <label for="filtroMarca">Filtrar por marca:</label>
+            <select id="filtroMarca" [(ngModel)]="filtroMarca">
+                <option value="">Todas las marcas</option>
+                <option *ngFor="let marca of marcas" [value]="marca">{{ marca }}</option>
+            </select>
+        </div>
+        <button class="boton-aplicar" (click)="aplicarFiltros()">Aplicar cambios</button>
+    </div>
+    <div class="catalogo">
+        <div class="producto" *ngFor="let producto of productosFiltrados">
+            <h3>{{ producto.brand }} {{ producto.name }}</h3>
+            <p>Precio: {{ producto.price }}</p>
+            <img [src]="producto.image" alt="{{ producto.name }}" width="175px">
+            <br>
+            <button (click)="addToCart(producto)" class="agregar-al-carrito">Agregar al carro</button>
+        </div>
+    </div>
+</div>

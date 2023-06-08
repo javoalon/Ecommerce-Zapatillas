@@ -1,0 +1,147 @@
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 1;
+}
+.catalogo-container {
+  display: flex;
+}
+.filtros {
+  width: 150px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-height: 450px;
+  max-height: 450px;
+}
+
+.filtros h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filtros label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  margin-top: 15px;
+}
+.filtros button {
+  background-color: #ff5500;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.filtros button:hover {
+  background-color: #e64700;
+}
+.filtros select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.filtros select:focus {
+  outline: none;
+  border-color: #ff5500;
+}
+
+.filtros .boton-aplicar {
+  background-color: #ff5500;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filtros .boton-aplicar:hover {
+  background-color: #e64700;
+}
+
+.producto {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ff5500;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+.producto {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.producto h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.producto p {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+}
+.producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 85, 0, 0.5);
+}
+
+.agregar-al-carrito {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border-top-right-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.agregar-al-carrito:hover {
+  background-color: #45a049;
+}
+
+.agregar-al-carrito:active {
+  background-color: #3e8941;
+}
+
+.agregar-al-carrito.success {
+  background-color: #28a745;
+}
+
+hr {
+  height: 2px;
+  background-color: #ff5500;
+  border: none;
+}
+
+h2 {
+  text-align: center;
+  font-size: 35px;
+  text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+<div class="carrito-container" [ngClass]="{'carrito-visible': carritoVisible}">
+    <button class="toggle-button" (click)="toggleCarrito()"><ng-icon name="bootstrapCart3"></ng-icon></button>
+    <div class="carrito">
+        <div class="lista-productos-carrito">
+            <h2>Carrito de compras</h2>
+            <div class="producto" *ngFor="let producto of productosSeleccionados">
+                <div class="contenido">
+                    <div class="imagen">
+                        <img [src]="producto.image" alt="{{ producto.name }}" width="85px">
+                    </div>
+                    <div class="info">
+                        <p>{{ producto.name }}</p>
+                        <p>Cantidad: {{ producto.cantidad }}</p>
+                        <p>${{ producto.price * producto.cantidad }}</p>
+                        <button class="btnEliminar" (click)="eliminarDelCarrito(producto)"><ng-icon
+                                name="bootstrapTrash3"></ng-icon></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="totalycomprar">
+        <p>Total: {{ calcularTotal() }}</p>
+        <button (click)="comprar()" *ngIf="calcularTotal()!=0">Comprar</button>
+    </div>
+
+</div>
