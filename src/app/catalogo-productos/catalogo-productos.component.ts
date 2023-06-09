@@ -10,8 +10,10 @@ import { CarritoService } from '../carrito/carrito.service';
 export class CatalogoComponent implements OnInit {
   productos: any[] = [];
   marcas: string[] = [];
+  talles: string[] = [];
   filtroPrecio: string = 'asc';
   filtroMarca: string = '';
+  filtroTalle: string = '';
   productosFiltrados: any[] = [];
 
   constructor(
@@ -23,6 +25,7 @@ export class CatalogoComponent implements OnInit {
     this.catalogoService.getProductos().subscribe(productos => {
       this.productos = productos;
       this.obtenerMarcasUnicas();
+      this.obtenerTallesUnicos();
       this.aplicarFiltros();
     });
   }
@@ -34,12 +37,22 @@ export class CatalogoComponent implements OnInit {
     });
     this.marcas = Array.from(marcasSet);
   }
+  obtenerTallesUnicos() {
+    const tallesSet = new Set<string>();
+    this.productos.forEach(producto => {
+      tallesSet.add(producto.size);
+    });
+    this.talles = Array.from(tallesSet);
+  }
 
   aplicarFiltros() {
     this.productosFiltrados = this.productos;
 
     if (this.filtroMarca) {
       this.productosFiltrados = this.productosFiltrados.filter(producto => producto.brand === this.filtroMarca);
+    }
+    if (this.filtroTalle) {
+      this.productosFiltrados = this.productosFiltrados.filter(producto => producto.size === this.filtroTalle);
     }
 
     if (this.filtroPrecio === 'asc') {
@@ -48,7 +61,12 @@ export class CatalogoComponent implements OnInit {
       this.productosFiltrados = this.productosFiltrados.sort((a, b) => b.price - a.price);
     }
   }
-
+  resetFiltros() {
+    this.filtroMarca = '';
+    this.filtroPrecio = 'asc';
+    this.filtroTalle = '';
+    this.aplicarFiltros();
+  }
   addToCart(producto: any) {
     this.carritoService.agregarAlCarrito(producto);
   }

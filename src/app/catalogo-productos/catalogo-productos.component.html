@@ -1,6 +1,6 @@
 <app-carrito></app-carrito>
 <hr>
-<h2>Catálogo de Productos</h2>
+<h2 style="font-size: 35px;">Catálogo.</h2>
 <div class="catalogo-container">
     <div class="filtros">
         <h2>Filtros</h2>
@@ -18,15 +18,24 @@
                 <option *ngFor="let marca of marcas" [value]="marca">{{ marca }}</option>
             </select>
         </div>
+        <div class="filtro-talle">
+            <label for="filtroTalle">Filtrar por marca:</label>
+            <select id="filtroTalle" [(ngModel)]="filtroTalle">
+                <option value="">Todos los talles</option>
+                <option *ngFor="let talle of talles" [value]="talle">{{ talle }}</option>
+            </select>
+        </div>
         <button class="boton-aplicar" (click)="aplicarFiltros()">Aplicar cambios</button>
+        <button class="boton-reset" (click)="resetFiltros()">Resetear filtros</button>
     </div>
     <div class="catalogo">
         <div class="producto" *ngFor="let producto of productosFiltrados">
             <h3>{{ producto.brand }} {{ producto.name }}</h3>
+            <hr>
             <p>Precio: {{ producto.price }}</p>
-            <img [src]="producto.image" alt="{{ producto.name }}" width="175px">
+            <img [src]="producto.image" alt="{{ producto.name }}" min-width="140px">
             <br>
-            <button (click)="addToCart(producto)" class="agregar-al-carrito">Agregar al carro</button>
+            <button (click)="addToCart(producto)" class="agregar-al-carrito"><ng-icon name="bootstrapCart3"></ng-icon></button>
         </div>
     </div>
 </div>

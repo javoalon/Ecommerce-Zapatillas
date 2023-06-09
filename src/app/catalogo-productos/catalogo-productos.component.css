@@ -4,9 +4,11 @@
   justify-content: center;
   flex-grow: 1;
 }
+
 .catalogo-container {
   display: flex;
 }
+
 .filtros {
   width: 150px;
   padding: 20px;
@@ -14,8 +16,8 @@
   margin-right: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  min-height: 450px;
-  max-height: 450px;
+  min-height: 500px;
+  max-height: 500px;
 }
 
 .filtros h2 {
@@ -30,6 +32,7 @@
   color: #333;
   margin-top: 15px;
 }
+
 .filtros button {
   background-color: #ff5500;
   color: #fff;
@@ -46,6 +49,7 @@
 .filtros button:hover {
   background-color: #e64700;
 }
+
 .filtros select {
   padding: 8px;
   border: 1px solid #ccc;
@@ -73,6 +77,22 @@
 .filtros .boton-aplicar:hover {
   background-color: #e64700;
 }
+.filtros .boton-reset {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filtros .boton-reset:hover {
+  background-color: #e60000;
+}
+
+
 
 .producto {
   width: 300px;
@@ -83,6 +103,7 @@
   text-align: center;
   transition: transform 0.3s ease-in-out;
 }
+
 .producto {
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -105,6 +126,7 @@
   max-width: 100%;
   height: auto;
 }
+
 .producto:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(255, 85, 0, 0.5);
