@@ -12,6 +12,7 @@ import { bootstrapCart3, bootstrapTrash3 } from '@ng-icons/bootstrap-icons';
 import { CarritoService } from './carrito/carrito.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [
     AppComponent,

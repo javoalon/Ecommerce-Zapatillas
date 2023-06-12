@@ -7,6 +7,17 @@
 
 .catalogo-container {
   display: flex;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .filtros {
@@ -77,6 +88,7 @@
 .filtros .boton-aplicar:hover {
   background-color: #e64700;
 }
+
 .filtros .boton-reset {
   background-color: #ff0000;
   color: #fff;
@@ -91,8 +103,6 @@
 .filtros .boton-reset:hover {
   background-color: #e60000;
 }
-
-
 
 .producto {
   width: 300px;
@@ -164,6 +174,8 @@ hr {
 
 h2 {
   text-align: center;
-  font-size: 35px;
+  color: #ffda9e;
   text-decoration: underline;
+  font-size: 55px;
+  animation: fadeIn 0.5s ease;
 }
